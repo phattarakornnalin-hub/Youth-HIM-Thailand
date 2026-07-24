@@ -1,20 +1,27 @@
 <script setup lang="ts">
-// โลจิกและ State สำหรับหน้า Home จะนำมาใส่ที่นี่ในขั้นตอนถัดไป
+import { useRouter } from 'vue-router'
+import LessonCard from '../components/LessonCard.vue'
+
+const router = useRouter()
+
+const handleReadLesson = (id: string | number) => {
+  router.push(`/lesson/${id}`)
+}
+
+const handleSaveLesson = (id: string | number) => {
+  alert(`บันทึกบทเรียน ID: ${id} เรียบร้อย!`)
+}
 </script>
 
 <template>
-  <div class="home-page min-h-screen bg-[#FBF9F5] text-[#2D2B2A] flex flex-col items-center justify-center p-6 text-center">
-    <div class="max-w-2xl space-y-4">
-      <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#2D2B2A]">
-        Youth HIM Thailand
-      </h1>
-      <p class="text-lg text-[#6B6865] leading-relaxed">
-        คลังบทเรียนและคู่มือเพื่อการสร้างสาวก รวบรวมเนื้อหาและเครื่องมือสำหรับผู้นำเยาวชนเพื่อเติบโตไปด้วยกัน
-      </p>
-    </div>
+  <div style="padding: 2rem; display: flex; justify-content: center;">
+    <LessonCard
+      id="1"
+      badgeText="NEW RELEASE"
+      title="Strategic Leadership in Small Groups"
+      description="Master the art of facilitating deep conversations and managing dynamics in youth circles. A comprehensive guide for 2024 leaders."
+      @read="handleReadLesson"
+      @save="handleSaveLesson"
+    />
   </div>
 </template>
-
-<style scoped>
-/* Style เฉพาะหน้า Home (ถ้ามี) */
-</style>

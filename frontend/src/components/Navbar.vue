@@ -1,16 +1,7 @@
 <template>
   <div class="app-layout">
-    <nav class="navbar">
-      <div class="navbar-container">
-        <a href="#" class="brand">Youth HIM Thailand</a>
-        <ul class="nav-links">
-          <li><a href="#" class="active">Lessons</a></li>
-          <li><a href="#">Courses</a></li>
-          <li><a href="#">Resources</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
-      </div>
-    </nav>
+    <!-- นำ Navbar มาวางไว้บนสุด -->
+    <Navbar />
 
     <main class="demo-container">
       <header class="header">
@@ -37,8 +28,9 @@
 </template>
 
 <script setup lang="ts">
+import Navbar from './components/Navbar.vue' // 👈 Import Navbar เข้ามา
 import LessonCard from './components/LessonCard.vue'
-import { mockLessons, type LessonItem } from './data/mockLessons'
+import { mockLessons, type LessonItem } from '../data/mockLessons'
 
 const handleRead = (item: LessonItem) => {
   alert(`คลิกเข้าดูบทเรียน: "${item.title}"`)
