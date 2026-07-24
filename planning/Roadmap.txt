@@ -1,0 +1,7 @@
+- Project Planning รายละเยอดอยู่ในไฟล์ Project Planning.txt
+- ออกแบบ UX/UI
+- วางโครง Frontend
+- จัดการ Database
+- เชื่อมต่อ database กับ Frontend
+- Testing
+- Deploy

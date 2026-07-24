@@ -1,0 +1,96 @@
+📌 Phase 1 : Vision & Requirement
+
+"สร้างเว็บไซต์สำหรับผู้นำคริสเตียนในกลุ่ม Youth เพื่อเก็บและแบ่งปันบทเรียนการสร้างสาวก ค้นหาบทเรียนได้ง่าย และช่วยให้ทุกคริสตจักรในเครือ HIM THAILAND เข้าถึงบทเรียนได้ง่ายยิ่งขึ้น"
+
+👥 กลุ่มผู้ใช้
+Guest	ดูบทเรียน ค้นหา ดาวน์โหลด
+Admin	จัดการทุกอย่าง
+
+📌 Phase 2 : Information Architecture
+
+Category
+- ผู้นำ
+- การสร้างสาวก
+- ชีวิตคริสเตียน
+
+บทเรียนหนึ่งบท
+- ชื่อ
+- คำอธิบาย
+- ผู้เขียน
+- หมวดหมู่
+- ไฟล์ PDF
+- รูปหน้าปก
+- วันที่สร้าง
+- จำนวนดาวน์โหลด
+
+📌 Phase 3 : UX (User Flow)
+Home
+↓
+Search
+↓
+Lesson
+↓
+Download PDF
+
+📌 Phase 4 : Database Design
+
+Users
+├── id
+├── name
+├── email
+├── password
+└── role
+
+Categories
+├── id
+├── name
+└── slug
+
+Lessons
+├── id
+├── title
+├── slug
+├── description
+├── thumbnail
+├── pdf_url
+├── status
+├── category_id
+├── created_at
+└── updated_at
+
+API
+POST   /auth/login
+GET    /lessons
+GET    /lessons/:slug
+POST   /lessons
+PUT    /lessons/:id
+DELETE /lessons/:id
+GET    /categories
+
+📌 Phase 5 : UI Design
+Public
+- Home
+- Search
+- Lesson Detail
+- Category
+
+Admin
+- Login
+- Lesson List
+- Create Lesson
+
+📌 Phase 6 : Development Roadmap
+Sprint 1
+- Authentication
+- Login
+- JWT
+
+Sprint 2
+- CRUD Lesson
+- Upload PDF
+- Upload Image
+
+Sprint 3
+- Search
+- Category
+- Deploy
