@@ -24,7 +24,6 @@ const closeMenu = () => {
       <div class="nav-links desktop-menu">
         <router-link to="/" class="nav-item">Home</router-link>
         <router-link to="/lesson/1" class="nav-item">Library</router-link>
-        <router-link to="/" class="nav-item">Saved</router-link>
         <router-link to="/dashboard" class="nav-item">Admin</router-link>
       </div>
 
@@ -56,7 +55,6 @@ const closeMenu = () => {
     <div v-if="isMenuOpen" class="mobile-menu">
       <router-link to="/" class="mobile-nav-item" @click="closeMenu">Home</router-link>
       <router-link to="/lesson/1" class="mobile-nav-item" @click="closeMenu">Library</router-link>
-      <router-link to="/" class="mobile-nav-item" @click="closeMenu">Saved</router-link>
       <router-link to="/dashboard" class="mobile-nav-item" @click="closeMenu">Admin</router-link>
     </div>
   </nav>

@@ -1,20 +1,22 @@
-<!-- src/App.vue -->
 <template>
   <div class="app-layout">
-    <!-- Navbar ด้านบน -->
+    <!-- Navbar (ถ้าอยากซ่อนด้วยใส่ v-if เหมือนกันได้ครับ) -->
     <Navbar />
 
-    <!-- ส่วนเนื้อหาตาม Router -->
+    <!-- ส่วนเนื้อหา -->
     <div class="content-wrapper">
       <router-view />
     </div>
 
-    <!-- Footer ด้านล่าง -->
-    <Footer />
+    <!-- แสดง Footer เฉพาะหน้าที่ไม่ได้สั่งซ่อน -->
+    <Footer v-if="!route.meta.hideFooter" />
   </div>
 </template>
 
 <script setup lang="ts">
+import { useRoute } from 'vue-router'
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
+
+const route = useRoute()
 </script>

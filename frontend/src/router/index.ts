@@ -20,7 +20,10 @@ const router = createRouter({
     {
       path: '/login',
       name: 'login',
-      component: LoginPage
+      component: LoginPage,
+      meta: {
+      hideFooter: true, // หรือ hideHeaderFooter: true
+    }
     },
     {
       path: '/dashboard',
