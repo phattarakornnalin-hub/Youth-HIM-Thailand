@@ -1,50 +1,14 @@
+<!-- src/App.vue -->
 <template>
   <div class="app-layout">
-    <nav class="navbar">
-      <div class="navbar-container">
-        <a href="#" class="brand">Youth HIM Thailand</a>
-        <ul class="nav-links">
-          <li><a href="#" class="active">Lessons</a></li>
-          <li><a href="#">Courses</a></li>
-          <li><a href="#">Resources</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
-      </div>
-    </nav>
+    <!-- Navbar จะแสดงอยู่ทุกหน้า -->
+    <Navbar />
 
-    <main class="demo-container">
-      <header class="header">
-        <h1>Courses & Lessons Overview</h1>
-        <p>ตัวอย่างการใช้งาน LessonCard.vue ร่วมกับ Mock Data 3 รูปแบบ</p>
-      </header>
-
-      <div class="cards-wrapper">
-        <LessonCard
-          v-for="item in mockLessons"
-          :key="item.id"
-          :badge="item.badge"
-          :title="item.title"
-          :description="item.description"
-          :image-src="item.imageSrc"
-          :primary-action-text="item.primaryActionText"
-          :secondary-action-text="item.secondaryActionText"
-          @read="handleRead(item)"
-          @save="handleSave(item)"
-        />
-      </div>
-    </main>
+    <!-- หน้าต่างสลับ Component ตาม Router -->
+    <router-view />
   </div>
 </template>
 
 <script setup lang="ts">
-import LessonCard from './components/LessonCard.vue'
-import { mockLessons, type LessonItem } from './data/mockLessons'
-
-const handleRead = (item: LessonItem) => {
-  alert(`คลิกเข้าดูบทเรียน: "${item.title}"`)
-}
-
-const handleSave = (item: LessonItem) => {
-  alert(`บันทึกบทเรียน: "${item.title}" เรียบร้อยแล้ว`)
-}
+import Navbar from './components/Navbar.vue'
 </script>
